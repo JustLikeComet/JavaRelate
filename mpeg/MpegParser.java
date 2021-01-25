@@ -683,9 +683,9 @@ Stuffer bytes:FF FF FF FF F8
 		params.put(FFmpegInvoke.PARAM_reOption, "1");
 		params.put(FFmpegInvoke.PARAM_bitStreamFilterVideo, "h264_mp4toannexb");
 		//FFmpegInvoke invoke = FFmpegInvoke.getInstance("rtmp://192.168.7.119:1935/live/test001", null, null,"pipe:1", "copy", null, "mpegts", params);
-		FFmpegInvoke invoke = FFmpegInvoke.getInstance("F:\\Record_broken_20200929_01\\1010021210100137\\00000002.mp4", null, null,"pipe:1", "copy", null, "h264", params);
+		FFmpegInvoke invoke = FFmpegInvoke.getInstance("00000002.mp4", null, null,"pipe:1", "copy", null, "h264", params);
 		invoke.runit();
-		DataOutputStream dout = new DataOutputStream(new FileOutputStream(new File("G:\\workspace\\PGSipServer\\testH264ToPs01.ps")));
+		DataOutputStream dout = new DataOutputStream(new FileOutputStream(new File("testH264ToPs01.ps")));
 
 		ByteBuffer pesBuffer = ByteBuffer.allocate(128*1024);
 		ByteBuffer mpegtsBuffer = ByteBuffer.allocate(128*1024);
