@@ -70,7 +70,7 @@ public class MysqlOperate {
 			opr.reconnect();
 			DBJsonQueryInfo dbJsonInfo = new DBJsonQueryInfo();
 
-			dbJsonInfo.addTable("cms_distribution_sensor");
+			dbJsonInfo.addTable("test_table");
 			dbJsonInfo.addFieldJsonMap("ID", "id");
 			dbJsonInfo.addFieldJsonMap("MAIN_ID", "MAINId");
 			dbJsonInfo.addFieldJsonMap("name", "name");
