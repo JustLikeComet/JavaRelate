@@ -1,0 +1,7 @@
+This is mini tcpip implements , use java.
+Include arp udp tcp .  
+Just for study the tcp/ip principle.
+
+You can use it freely ,  but dont't use it in real network environments or production enviroments.
+
+
