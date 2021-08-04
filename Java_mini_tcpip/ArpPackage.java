@@ -140,28 +140,4 @@ public class ArpPackage {
 		return pos-off;
 	}
 
-	public static void main(String[] args) {
-		byte[] localMacAddr = {(byte)0xfe, (byte)0x00, (byte)0x05, (byte)0x06, (byte)0x07, (byte)0x08};
-		byte[] arpPkt = {   (byte)0xfe, (byte)0x00, (byte)0x05, (byte)0x06, (byte)0x07, (byte)0x08, (byte)0xfe, (byte)0x00,
-				(byte)0x01, (byte)0x02, (byte)0x03, (byte)0x04, (byte)0x08, (byte)0x06, (byte)0x00, (byte)0x01,
-				(byte)0x08, (byte)0x00, (byte)0x06, (byte)0x04, (byte)0x00, (byte)0x01, (byte)0xfe, (byte)0x00, 
-				(byte)0x01, (byte)0x02, (byte)0x03, (byte)0x04, (byte)0xc0, (byte)0xa8, (byte)0x0b, (byte)0x7b,
-				(byte)0xff, (byte)0xff, (byte)0xff, (byte)0xff, (byte)0xff, (byte)0xff, (byte)0xc0, (byte)0xa8,
-				(byte)0x0b, (byte)0x0c, (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, 
-				(byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00,
-				(byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00 
-				};
-
-		EtherNetPacket replyEtherNetPkg = new EtherNetPacket();
-		int etherlen = EtherNetPacket.extraEthernetPack(replyEtherNetPkg, arpPkt, 0, arpPkt.length);
-		if(replyEtherNetPkg.protType==0x0806 && ByteUtils.equals(replyEtherNetPkg.toMac, localMacAddr)){
-			ArpPackage replyArpPackage = new ArpPackage();
-			int arpPkgLen = ArpPackage.extraArpPack(replyArpPackage, arpPkt, etherlen, arpPkt.length-etherlen);
-			String macAddrStr = String.format("%02X:%02X:%02X:%02X:%02X:%02X", replyArpPackage.targetMacAddr[0], replyArpPackage.targetMacAddr[1],
-					replyArpPackage.targetMacAddr[2], replyArpPackage.targetMacAddr[3], replyArpPackage.targetMacAddr[4], replyArpPackage.targetMacAddr[5]);
-			System.out.println("arp return macAddrStr " + macAddrStr);
-		}
-		
-	}
-
 }
