@@ -49,17 +49,7 @@ public class MongoDBDriver implements Driver {
 	@Override
 	public DriverPropertyInfo[] getPropertyInfo(String url, Properties info) throws SQLException {
 
-		DriverPropertyInfo propInfos[] = new DriverPropertyInfo[2];
-		DriverPropertyInfo p;
-
-		p = new DriverPropertyInfo("user", null);
-		p.value = info.getProperty("user");
-		p.required = true;
-		propInfos[0] = p;
-		p = new DriverPropertyInfo("password", null);
-		p.value = info.getProperty("password");
-		p.required = true;
-		propInfos[1] = p;
+		DriverPropertyInfo propInfos[] = new DriverPropertyInfo[0];
 
 		return propInfos;
 	}
