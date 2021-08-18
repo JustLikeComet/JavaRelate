@@ -91,8 +91,7 @@ public class MongoDBDriver implements Driver {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		//Connection conn = DriverManager.getConnection("jdbc:mongo://95bbb491:video%40EF534C4AD8F9@192.168.11.12:27017/gghis?authSource=admin&authMechanism=SCRAM-SHA-1", "user", "pass");
-		Connection conn = DriverManager.getConnection("jdbc:mongo://127.0.0.1:27017/gghis", "", "");
+		Connection conn = DriverManager.getConnection("jdbc:mongo://127.0.0.1:27017/TestCollection", "", "");
 		java.sql.Statement statement = conn.createStatement();
 		statement.executeUpdate("insert into test01 (c1,c2,c3) values ('123','456','789')");
 		statement.executeUpdate("update test01 set c2='ABC' where c1='123'");
