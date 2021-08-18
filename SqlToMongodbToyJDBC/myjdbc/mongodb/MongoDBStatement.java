@@ -405,8 +405,4 @@ public class MongoDBStatement implements Statement {
 		return null;
 	}
 
-	public static void main(String[] args) throws Exception {
-
-	}
-
 }
