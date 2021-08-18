@@ -91,7 +91,7 @@ public class MongoDBDriver implements Driver {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		Connection conn = DriverManager.getConnection("jdbc:mongo://127.0.0.1:27017/TestCollection", "", "");
+		Connection conn = DriverManager.getConnection("jdbc:mongo://127.0.0.1:27017/TestDB", "", "");
 		java.sql.Statement statement = conn.createStatement();
 		statement.executeUpdate("insert into test01 (c1,c2,c3) values ('123','456','789')");
 		statement.executeUpdate("update test01 set c2='ABC' where c1='123'");
